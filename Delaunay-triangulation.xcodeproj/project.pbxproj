@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CBBC015E287DB60600C632AC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBBC015D287DB60600C632AC /* main.cpp */; };
+		CBBC016E287DB6CD00C632AC /* triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0164287DB6CD00C632AC /* triangle.cpp */; };
+		CBBC016F287DB6CD00C632AC /* vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0165287DB6CD00C632AC /* vector2.cpp */; };
+		CBBC0170287DB6CD00C632AC /* delaunay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0168287DB6CD00C632AC /* delaunay.cpp */; };
+		CBBC0171287DB6CD00C632AC /* edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBBC016C287DB6CD00C632AC /* edge.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,16 @@
 /* Begin PBXFileReference section */
 		CBBC015A287DB60600C632AC /* Delaunay-triangulation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Delaunay-triangulation"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBBC015D287DB60600C632AC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CBBC0164287DB6CD00C632AC /* triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangle.cpp; sourceTree = "<group>"; };
+		CBBC0165287DB6CD00C632AC /* vector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vector2.cpp; sourceTree = "<group>"; };
+		CBBC0166287DB6CD00C632AC /* numeric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = numeric.h; sourceTree = "<group>"; };
+		CBBC0167287DB6CD00C632AC /* delaunay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = delaunay.h; sourceTree = "<group>"; };
+		CBBC0168287DB6CD00C632AC /* delaunay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = delaunay.cpp; sourceTree = "<group>"; };
+		CBBC0169287DB6CD00C632AC /* TInstance.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TInstance.txt; sourceTree = "<group>"; };
+		CBBC016A287DB6CD00C632AC /* triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangle.h; sourceTree = "<group>"; };
+		CBBC016B287DB6CD00C632AC /* vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector2.h; sourceTree = "<group>"; };
+		CBBC016C287DB6CD00C632AC /* edge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = edge.cpp; sourceTree = "<group>"; };
+		CBBC016D287DB6CD00C632AC /* edge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = edge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,16 @@
 			isa = PBXGroup;
 			children = (
 				CBBC015D287DB60600C632AC /* main.cpp */,
+				CBBC0168287DB6CD00C632AC /* delaunay.cpp */,
+				CBBC0167287DB6CD00C632AC /* delaunay.h */,
+				CBBC016C287DB6CD00C632AC /* edge.cpp */,
+				CBBC016D287DB6CD00C632AC /* edge.h */,
+				CBBC0166287DB6CD00C632AC /* numeric.h */,
+				CBBC0169287DB6CD00C632AC /* TInstance.txt */,
+				CBBC0164287DB6CD00C632AC /* triangle.cpp */,
+				CBBC016A287DB6CD00C632AC /* triangle.h */,
+				CBBC0165287DB6CD00C632AC /* vector2.cpp */,
+				CBBC016B287DB6CD00C632AC /* vector2.h */,
 			);
 			path = "Delaunay-triangulation";
 			sourceTree = "<group>";
@@ -119,7 +143,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBBC0170287DB6CD00C632AC /* delaunay.cpp in Sources */,
 				CBBC015E287DB60600C632AC /* main.cpp in Sources */,
+				CBBC016F287DB6CD00C632AC /* vector2.cpp in Sources */,
+				CBBC0171287DB6CD00C632AC /* edge.cpp in Sources */,
+				CBBC016E287DB6CD00C632AC /* triangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
