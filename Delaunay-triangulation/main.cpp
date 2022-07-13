@@ -25,16 +25,66 @@ int main(int argc, char * argv[])
     }
 
     std::default_random_engine eng(std::random_device{}());
-    //eng.seed(10);
-    std::uniform_real_distribution<double> dist_w(0, 800);
-    std::uniform_real_distribution<double> dist_h(0, 600);
-
+    eng.seed(10);
+    
+    
+    int Lw = 0;
+    int Hw = 800;
+    
+    int Lh = 0;
+    int Hh = 600;
+    float adjusting_space = 0.9;
+    float Limit_space = (float(Hw-Lw) * float(Hh-Lh)* adjusting_space)/numberPoints;
+    float Limit_distance = sqrt((Limit_space/3.14));
+    
+    std::uniform_real_distribution<double> dist_w(Lw, Hw);
+    std::uniform_real_distribution<double> dist_h(Lh, Hh);
+    
     std::cout << "Generating " << numberPoints << " random points" << std::endl;
 
     std::vector<dt::Vector2<double>> points;
-    for(int i = 0; i < numberPoints; ++i) {
-        points.push_back(dt::Vector2<double>{dist_w(eng), dist_h(eng), i});
+    
+    int itr = 0;
+    int itr_s = 0;
+    const int itr_limit = 50000;
+    dt::Vector2<double> tmp(-1,-1,-1);
+    double dist = -1;
+    bool find = false;
+    
+    
+    
+    
+    while(itr < numberPoints && itr_s< itr_limit)
+    {
+        tmp.In = itr;
+        tmp.x = dist_w(eng);
+        tmp.y = dist_w(eng);
+        find = false;
+        for (const auto p : points)
+        {
+            dist = p.dist(tmp);
+            if (dist < Limit_distance)
+            {
+                find = true;
+                break;
+            }
+        }
+        
+        if (!find)
+        {
+            points.push_back(tmp);
+            itr++;
+        }
+        
+        itr_s++;
     }
+    
+    if (itr_s == itr_limit)
+    {
+        cout<<"cannot creat the instance!!"<<endl;
+        exit(2);
+    }
+
 
     dt::Delaunay<double> triangulation;
     const auto start = std::chrono::high_resolution_clock::now();
@@ -51,7 +101,7 @@ int main(int argc, char * argv[])
     // ============== output ============================
     // Transform each points of each vector as a rectangle
     std::ofstream out;
-    out.open("/Users/hesamshaelaie/Documents/Research/others-code/testing/Testing-graph/Testing-graph/TInstance.txt");
+    out.open("/Users/hesamshaelaie/Documents/Research/Delaunay-triangulation/Delaunay-triangulation/TInstance.txt");
     if (!out) {
         cout<<"cannot open the output file!!"<<endl;
         exit(31);
